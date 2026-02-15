@@ -11,6 +11,7 @@
     pkgs.neofetch
     pkgs.tree
     pkgs.nettools
+    pkgs.openssh
   ];
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
