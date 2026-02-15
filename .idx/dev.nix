@@ -10,6 +10,7 @@
     pkgs.htop
     pkgs.neofetch
     pkgs.tree
+    pkgs.nettools
   ];
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
