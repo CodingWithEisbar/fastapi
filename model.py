@@ -1,5 +1,5 @@
 import sqlalchemy 
-from pydantic import BaseModel 
+from pydantic import BaseModel  #Validate dữ liệu đầu vào từ API
 from fastapi import FastAPI, Body
 
 
