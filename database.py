@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine
-import sqlalchemy
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
 DATABASE_URL="postgresql://admin:Nguyen@123@194.233.93.255:22641/DB_POOL"
 
@@ -13,3 +14,10 @@ engine = create_engine(
     pool_recycle=1800     # Tự động hủy và tạo lại kết nối sau mỗi 30 phút (tránh lỗi database tự ngắt kết nối cũ)
 )
 
+SessionLocal = sessionmaker(
+    autocommit = False,
+    autoflush= False,
+    bind = engine
+)
+
+Base
