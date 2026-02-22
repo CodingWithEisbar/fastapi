@@ -11,5 +11,13 @@ app = FastAPI()
 class productType (Base):
     __tablename__ = "productType"
 
-    id= Column(Integer, primary_key=True, , index=True)
+    id= Column(Integer, primary_key=True, index=True)
     product_type_name= Column(String, index=True)
+
+class product (Base):
+    __tablename__ = "product"
+    id= Column(Integer, primary_key=True, index=True)
+    product_type_id= Column(Integer, ForeignKey("productType.id"))
+    product_name=Column(String, index=True)
+    price=Column(Integer)
+    unit=Column(Integer) 

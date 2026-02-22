@@ -20,4 +20,4 @@ SessionLocal = sessionmaker(
     bind = engine
 )
 
-Base
+
