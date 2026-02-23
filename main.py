@@ -9,6 +9,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 print(f"Connecting to database at: {DATABASE_URL}")
 
+
 @app.api_route("/{full_path:path}", methods=["GET"])
     # Log or handle the request as a default
         print(f"Default GET handler called for path: {full_path}")
@@ -37,4 +38,4 @@ print(f"Connecting to database at: {DATABASE_URL}")
                                     newId = len(fakeDatabase.keys()) + 1
                                         fakeDatabase[newId] = {"task":task}
                                             return {"Data post successfully"}
-                                            
+                                 
