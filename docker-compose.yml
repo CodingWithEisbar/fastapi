@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  app:
+    image: python:3.12-bookworm
+    container_name: dev_app
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    command: >
+      bash -c "
+        python -m venv .venv &&
+        source .venv/bin/activate &&
+        pip install -r requirements.txt &&
+        ./devserver.sh
+      "
+    tty: true
+    stdin_open: true
+
+  db:
+    image: postgres:16
+    container_name: dev_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpass
+      POSTGRES_DB: devdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

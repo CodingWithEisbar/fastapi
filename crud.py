@@ -1,18 +1,18 @@
 from sqlalchemy.orm import Session
-import models
+import model
 import schemas
 
 # READ: Get a single item by ID
 def get_item(db: Session, item_id: int):
-    return db.query(models.Item).filter(models.Item.id == item_id).first()
+    return db.query(model.Item).filter(model.Item.id == item_id).first()
 
 # READ: Get a list of items
 def get_items(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.Item).offset(skip).limit(limit).all()
+    return db.query(model.Item).offset(skip).limit(limit).all()
 
 # CREATE: Add a new item
 def create_item(db: Session, item: schemas.ItemCreate):
-    db_item = models.Item(title=item.title, description=item.description)
+    db_item = model.Item(title=item.title, description=item.description)
     db.add(db_item)
     db.commit()
     db.refresh(db_item)

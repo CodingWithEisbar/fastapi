@@ -12,6 +12,10 @@
     pkgs.tree
     pkgs.nettools
     pkgs.openssh
+    pkgs.inetutils
+    pkgs.postgresql_16
+    pkgs.sudo
+    pkgs.docker
   ];
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
@@ -28,4 +32,6 @@
       onStart = { run-server = "./devserver.sh"; };
     };
   };
+
 }
+

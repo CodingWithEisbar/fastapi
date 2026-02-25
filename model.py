@@ -1,4 +1,4 @@
-'''
+"""
 import sqlalchemy 
 from pydantic import BaseModel  #Validate dữ liệu đầu vào từ API
 from fastapi import FastAPI, Body
@@ -22,7 +22,7 @@ class product (Base):
     product_name=Column(String, index=True)
     price=Column(Integer)
     unit=Column(Integer) 
-'''
+"""
 from sqlalchemy import Column, Integer, String
 from database import Base
 

@@ -1,4 +1,4 @@
-'''
+"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -20,7 +20,7 @@ SessionLocal = sessionmaker(
     autoflush= False,
     bind = engine
 )
-'''
+"""
 
 import os
 from sqlalchemy import create_engine
@@ -32,6 +32,7 @@ load_dotenv()
 
 # Get the database URL from the environment
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+print(SQLALCHEMY_DATABASE_URL)
 
 if not SQLALCHEMY_DATABASE_URL:
     raise ValueError("DATABASE_URL environment variable is not set")
