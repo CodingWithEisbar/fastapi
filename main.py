@@ -47,11 +47,24 @@ import model
 import schemas 
 import crud
 import database
+import os
 
 # Create the database tables if they don't exist
 model.Base.metadata.create_all(bind=database.engine)
 
 app = FastAPI(title="FastAPI PostgreSQL CRUD")
+
+@app.get("/")
+def root ():
+    return {"Location":"Horizon"}
+
+@app.get("/database-connection")
+def get_database_name():
+    db_url = os.getenv("DATABASE_URL")
+    if db_url:
+        db_name = db_url.split("/")[-1]
+        return {"database_name": db_name}
+    return {"error": "DATABASE_URL environment variable not set"}
 
 @app.post("/items/", response_model=schemas.ItemResponse)
 def create_item(item: schemas.ItemCreate, db: Session = Depends(database.get_db)):
