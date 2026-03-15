@@ -15,6 +15,7 @@
     pkgs.postgresql_16
     pkgs.sudo
     pkgs.docker
+    pkgs.curl
   ];
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"

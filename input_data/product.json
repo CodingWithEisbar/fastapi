@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "Sữa TH true Milk",
+      "description": "Mô tả chi tiết cho sản phẩm A."
+    },
+    {
+      "id": 2,
+      "title": "Sản phẩm B",
+      "description": "Mô tả chi tiết cho sản phẩm B."
+    },
+    {
+      "id": 3,
+      "title": "Sản phẩm C",
+      "description": null
+    },
+    {
+      "id": 4,
+      "title": "Sản phẩm D",
+      "description": "Mô tả cho sản phẩm D."
+    }
+  ]
+  
