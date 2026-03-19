@@ -10,3 +10,13 @@ To quit:
 ```
 \q
 ```
+
+To run a specific `.sql` file, after connect:
+```
+\i <file_path>
+```
+
+For instance:
+```
+\i /home/user/fastapi/postgresql/view_table.sql
+```
