@@ -18,5 +18,5 @@ To run a specific `.sql` file, after connect:
 
 For instance:
 ```
-\i /home/user/fastapi/postgresql/view_table.sql
+\i postgresql/view_table.sql
 ```
