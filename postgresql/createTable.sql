@@ -1,0 +1,2 @@
+ALTER TABLE items 
+ALTER COLUMN "productTypeID" TYPE VARCHAR(50);
