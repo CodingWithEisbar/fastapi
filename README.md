@@ -12,7 +12,7 @@ Server should run automatically when starting a workspace. To run manually, run:
 ## To run code
 Using command 
 ```sh
-uvicorn model:app --reload
+uvicorn main:app --reload
 ```
 ---
 
